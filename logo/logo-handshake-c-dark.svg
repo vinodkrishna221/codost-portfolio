@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- The Handshake C: Dark variant -->
+  <path d="M 6 10 C 6 6 10 4 14 4 L 18 4" stroke="#22d3ee" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M 6 22 C 6 26 10 28 14 28 L 18 28" stroke="#22d3ee" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M 18 4 C 24 4 26 8 26 12 C 26 14 24 15 22 15" stroke="#22d3ee" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M 18 28 C 24 28 26 24 26 20 C 26 18 24 17 22 17" stroke="#22d3ee" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <circle cx="22" cy="16" r="2" fill="#22d3ee"/>
+  <circle cx="22" cy="16" r="1" fill="#0f172a"/>
+</svg>

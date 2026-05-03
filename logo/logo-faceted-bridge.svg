@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Faceted Bridge: Two mirrored origami crystal shapes forming a gateway -->
+  <!-- Left crystal - 3 faces -->
+  <path d="M 4 16 L 14 6 L 14 16 Z" fill="#0891b2"/>
+  <path d="M 4 16 L 14 16 L 14 26 Z" fill="#065f76"/>
+  <path d="M 14 6 L 16 4 L 16 16 L 14 16 Z" fill="#06b6d4"/>
+  <!-- Right crystal - 3 faces (mirrored) -->
+  <path d="M 28 16 L 18 6 L 18 16 Z" fill="#0891b2"/>
+  <path d="M 28 16 L 18 16 L 18 26 Z" fill="#065f76"/>
+  <path d="M 18 6 L 16 4 L 16 16 L 18 16 Z" fill="#06b6d4"/>
+  <!-- Central diamond keystone at top -->
+  <path d="M 14 16 L 16 14 L 18 16 L 16 18 Z" fill="#ecfeff"/>
+  <!-- Bottom convergence point -->
+  <path d="M 14 26 L 16 28 L 18 26 L 16 24 Z" fill="#0e7490"/>
+</svg>

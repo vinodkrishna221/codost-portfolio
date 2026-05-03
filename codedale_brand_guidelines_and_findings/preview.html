@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeDale Design System Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #0067f4;
+      --color-primary-hover: #0056cc;
+      --color-bg: #f5f5f5;
+      --color-surface: #ffffff;
+      --color-border: #e2e8f0;
+      --color-text: #0f172a;
+      --color-text-secondary: #334155;
+      --color-text-muted: #64748b;
+      
+      --font-heading: 'Inter', sans-serif; /* Fallback for Satoshi */
+      --font-body: 'Inter', sans-serif;
+      
+      --shadow-lg: rgba(15, 25, 62, 0.08) 0px 2px 6px -4px, rgb(217, 223, 232) 0px -0.2px 0px 0.3px, rgba(44, 45, 48, 0.02) 0px 1.34368px 0.671842px -0.625px, rgba(44, 45, 48, 0.02) 0px 3.18477px 1.59238px -1.25px, rgba(44, 45, 48, 0.02) 0px 5.80935px 2.90467px -1.875px, rgba(44, 45, 48, 0.02) 0px 9.65803px 4.82901px -2.5px, rgba(44, 45, 48, 0.02) 0px 15.5969px 7.79846px -3.125px, rgba(44, 45, 48, 0.01) 0px 25.5306px 12.7653px -3.75px, rgba(44, 45, 48, 0.01) 0px 43.962px 21.981px -4.375px, rgba(44, 45, 48, 0) 0px 80px 40px -5px;
+      
+      --radius-xl: 16px;
+      --radius-full: 9999px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.5;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-heading);
+      color: var(--color-text);
+      margin-top: 0;
+    }
+
+    h1 { font-size: 50px; font-weight: 700; line-height: 1.4; letter-spacing: -2.5px; }
+    h2 { font-size: 36px; font-weight: 600; line-height: 1.2; letter-spacing: -0.9px; }
+    h3 { font-size: 20px; font-weight: 500; line-height: 1.4; }
+
+    section { margin-bottom: 60px; }
+    .swatch-container { display: flex; gap: 20px; flex-wrap: wrap; }
+    .swatch {
+      width: 150px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      background: var(--color-surface);
+    }
+    .swatch-color { height: 100px; }
+    .swatch-info { padding: 12px; font-size: 14px; }
+    .swatch-info strong { display: block; margin-bottom: 4px; }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.15s ease-in-out;
+    }
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: white;
+    }
+    .btn-primary:hover {
+      background-color: var(--color-primary-hover);
+    }
+
+    .card {
+      background-color: var(--color-surface);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      padding: 32px;
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+
+  <header style="margin-bottom: 60px;">
+    <h1>CodeDale Design System</h1>
+    <p style="color: var(--color-text-secondary);">Analyzed from codedale.tech</p>
+  </header>
+
+  <section>
+    <h2>Colors</h2>
+    <div class="swatch-container">
+      <div class="swatch">
+        <div class="swatch-color" style="background-color: var(--color-primary);"></div>
+        <div class="swatch-info">
+          <strong>Primary</strong>
+          <span style="color: var(--color-text-muted);">#0067f4</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background-color: var(--color-surface); border-bottom: 1px solid var(--color-border);"></div>
+        <div class="swatch-info">
+          <strong>Surface</strong>
+          <span style="color: var(--color-text-muted);">#ffffff</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background-color: var(--color-bg);"></div>
+        <div class="swatch-info">
+          <strong>Background</strong>
+          <span style="color: var(--color-text-muted);">#f5f5f5</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Typography</h2>
+    <h1>Display H1 (50px / -2.5px tracking)</h1>
+    <h2>Heading H2 (36px / -0.9px tracking)</h2>
+    <h3>Card Title H3 (20px)</h3>
+    <p>Body text (16px). This is an example of the standard paragraph typography used throughout the application to ensure readable, accessible content.</p>
+  </section>
+
+  <section>
+    <h2>Components</h2>
+    
+    <h3 style="margin-top: 40px;">Buttons</h3>
+    <button class="btn btn-primary">Primary Action</button>
+    
+    <h3 style="margin-top: 40px;">Cards</h3>
+    <div class="card">
+      <h3>Premium Services</h3>
+      <p style="color: var(--color-text-secondary); margin-bottom: 24px;">Discover our state-of-the-art technological solutions built to scale your business.</p>
+      <button class="btn btn-primary">Learn More</button>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Codost Logo Showcase — Round 2</title>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #fafafa;
+    color: #111827;
+  }
+
+  .hero {
+    text-align: center;
+    padding: 64px 20px 40px;
+    background: linear-gradient(135deg, #ecfeff 0%, #fafafa 50%, #f0fdfa 100%);
+    border-bottom: 1px dashed #e5e7eb;
+  }
+
+  .hero h1 {
+    font-family: 'Satoshi', system-ui, sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    color: #111827;
+    margin-bottom: 8px;
+  }
+
+  .hero p {
+    color: #4b5563;
+    font-size: 16px;
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .hero .badge {
+    display: inline-block;
+    background: #0891b2;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 14px;
+    border-radius: 9999px;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+  }
+
+  .concept-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 56px 24px;
+    border-bottom: 1px dashed #e5e7eb;
+  }
+
+  .concept-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
+
+  .concept-number {
+    width: 36px;
+    height: 36px;
+    background: #0891b2;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Satoshi', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .concept-header h2 {
+    font-family: 'Satoshi', system-ui, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+  }
+
+  .concept-header .tag {
+    font-size: 11px;
+    color: #0891b2;
+    background: #ecfeff;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-weight: 500;
+  }
+
+  .concept-tagline {
+    font-family: 'Satoshi', system-ui, sans-serif;
+    color: #0891b2;
+    font-size: 15px;
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 6px;
+    padding-left: 48px;
+  }
+
+  .concept-desc {
+    color: #4b5563;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 32px;
+    max-width: 680px;
+    padding-left: 48px;
+  }
+
+  .logo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  @media (max-width: 768px) {
+    .logo-grid { grid-template-columns: 1fr; }
+    .concept-desc, .concept-tagline, .nav-mockups { padding-left: 0; }
+  }
+
+  .logo-card {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 200ms ease-out;
+    cursor: pointer;
+  }
+
+  .logo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -8px rgba(0,0,0,0.1);
+  }
+
+  .logo-card.selected {
+    outline: 3px solid #0891b2;
+    outline-offset: -1px;
+  }
+
+  .card-light {
+    background: #ffffff;
+    padding: 48px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+  }
+
+  .card-dark {
+    background: #0f172a;
+    padding: 48px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+  }
+
+  .card-light img, .card-dark img {
+    max-height: 90px;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .card-label {
+    background: #fafafa;
+    padding: 14px 18px;
+    font-size: 13px;
+    color: #4b5563;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .card-label strong {
+    color: #111827;
+    font-weight: 600;
+  }
+
+  .card-label .pill {
+    font-size: 10px;
+    background: #ecfeff;
+    color: #0891b2;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    font-weight: 500;
+  }
+
+  /* Nav mockup section */
+  .nav-mockups {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 28px;
+    padding-left: 48px;
+  }
+
+  .nav-mock {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 24px 10px 14px;
+    border-radius: 9999px;
+  }
+
+  .nav-mock.light {
+    background: white;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+  }
+
+  .nav-mock.dark {
+    background: #0f172a;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .nav-mock img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .nav-mock .brand-name {
+    font-family: 'Satoshi', system-ui, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+
+  .nav-mock.light .brand-name { color: #111827; }
+  .nav-mock.dark .brand-name { color: #f1f5f9; }
+
+  /* Meaning callout */
+  .meaning {
+    margin-top: 20px;
+    padding: 16px 20px;
+    padding-left: 48px;
+    max-width: 680px;
+  }
+
+  .meaning-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+
+  .meaning p {
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.6;
+  }
+
+  .meaning em {
+    color: #0891b2;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  /* Selection bar */
+  .selection-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 2px solid #0891b2;
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    z-index: 100;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+    transition: transform 300ms ease;
+  }
+
+  .selection-bar.hidden {
+    transform: translateY(100%);
+  }
+
+  .selection-bar .pick-label {
+    font-size: 13px;
+    color: #4b5563;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+
+  .pick-items {
+    display: flex;
+    gap: 16px;
+    flex: 1;
+    overflow-x: auto;
+  }
+
+  .pick-item {
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .pick-item img {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    padding: 4px;
+    background: white;
+  }
+
+  .pick-item span {
+    display: block;
+    font-size: 10px;
+    color: #374151;
+    margin-top: 4px;
+    max-width: 80px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 48px 20px 120px;
+    color: #9ca3af;
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">ROUND 2 — PEOPLE-FRIENDLY</div>
+  <h1>Codost Logo Showcase</h1>
+  <p>Every logo here is designed to be understood by anyone — your mom, your neighbor, a local shop owner. No tech jargon. Pure meaning. Click any card to compare.</p>
+</div>
+
+<!-- Concept A: Handshake C -->
+<section class="concept-section" id="concept-a">
+  <div class="concept-header">
+    <div class="concept-number">A</div>
+    <h2>The Handshake</h2>
+    <span class="tag">Partnership</span>
+  </div>
+  <div class="concept-tagline">"We work WITH you, not just FOR you."</div>
+  <p class="concept-desc">A bold letter "C" that transforms into two hands reaching toward each other. The meeting point glows — that's where the magic happens. Every person on earth understands a handshake.</p>
+
+  <div class="logo-grid">
+    <div class="logo-card" data-concept="A" data-variant="icon">
+      <div class="card-light"><img src="logo-handshake-c.svg" alt="Handshake C icon"></div>
+      <div class="card-dark"><img src="logo-handshake-c-dark.svg" alt="Handshake C dark"></div>
+      <div class="card-label"><strong>Icon Mark</strong><span class="pill">32×32</span></div>
+    </div>
+    <div class="logo-card" data-concept="A" data-variant="lockup">
+      <div class="card-light"><img src="logo-handshake-c-lockup.svg" alt="Handshake C lockup"></div>
+      <div class="card-dark"><img src="logo-handshake-c-lockup-dark.svg" alt="Handshake C lockup dark"></div>
+      <div class="card-label"><strong>Icon + Codost</strong><span class="pill">Lockup</span></div>
+    </div>
+  </div>
+
+  <div class="nav-mockups">
+    <div class="nav-mock light"><img src="logo-handshake-c.svg" alt=""><span class="brand-name">Codost</span></div>
+    <div class="nav-mock dark"><img src="logo-handshake-c-dark.svg" alt=""><span class="brand-name">Codost</span></div>
+  </div>
+
+  <div class="meaning">
+    <div class="meaning-title">Why it works</div>
+    <p>A handshake is <em>the most universal trust symbol</em>. A local restaurant owner sees this and thinks "they'll partner with me." The "C" shape is subtle — it's a logo first, a letter second.</p>
+  </div>
+</section>
+
+<!-- Concept B: Chat Bubbles -->
+<section class="concept-section" id="concept-b">
+  <div class="concept-header">
+    <div class="concept-number">B</div>
+    <h2>The Conversation</h2>
+    <span class="tag">Communication</span>
+  </div>
+  <div class="concept-tagline">"We listen first, build second."</div>
+  <p class="concept-desc">Two overlapping chat bubbles — the larger one (Codost) with three listening dots, the smaller one (the client) with a checkmark ✓ saying "understood." It's a conversation where you feel heard.</p>
+
+  <div class="logo-grid">
+    <div class="logo-card" data-concept="B" data-variant="icon">
+      <div class="card-light"><img src="logo-chat-bubbles.svg" alt="Chat Bubbles icon"></div>
+      <div class="card-dark"><img src="logo-chat-bubbles-dark.svg" alt="Chat Bubbles dark"></div>
+      <div class="card-label"><strong>Icon Mark</strong><span class="pill">32×32</span></div>
+    </div>
+    <div class="logo-card" data-concept="B" data-variant="lockup">
+      <div class="card-light"><img src="logo-chat-bubbles-lockup.svg" alt="Chat Bubbles lockup"></div>
+      <div class="card-dark"><img src="logo-chat-bubbles-lockup-dark.svg" alt="Chat Bubbles lockup dark"></div>
+      <div class="card-label"><strong>Icon + Codost</strong><span class="pill">Lockup</span></div>
+    </div>
+  </div>
+
+  <div class="nav-mockups">
+    <div class="nav-mock light"><img src="logo-chat-bubbles.svg" alt=""><span class="brand-name">Codost</span></div>
+    <div class="nav-mock dark"><img src="logo-chat-bubbles-dark.svg" alt=""><span class="brand-name">Codost</span></div>
+  </div>
+
+  <div class="meaning">
+    <div class="meaning-title">Why it works</div>
+    <p>Everyone uses WhatsApp. Everyone recognizes chat bubbles. The <em>checkmark inside the reply</em> says "we got you" without a single word. It's warm, familiar, and feels like messaging a friend.</p>
+  </div>
+</section>
+
+<!-- Concept C: Smile Arrow -->
+<section class="concept-section" id="concept-c">
+  <div class="concept-header">
+    <div class="concept-number">C</div>
+    <h2>The Smile Forward</h2>
+    <span class="tag">Growth + Joy</span>
+  </div>
+  <div class="concept-tagline">"Happy businesses, moving forward."</div>
+  <p class="concept-desc">A clean letter "C" with a smile curve underneath that doubles as a forward arrow. Think Amazon's A-to-Z smile, but for Codost. It says: we make you happy AND we move your business forward.</p>
+
+  <div class="logo-grid">
+    <div class="logo-card" data-concept="C" data-variant="icon">
+      <div class="card-light"><img src="logo-smile-arrow.svg" alt="Smile Arrow icon"></div>
+      <div class="card-dark"><img src="logo-smile-arrow-dark.svg" alt="Smile Arrow dark"></div>
+      <div class="card-label"><strong>Icon Mark</strong><span class="pill">32×32</span></div>
+    </div>
+    <div class="logo-card" data-concept="C" data-variant="lockup">
+      <div class="card-light"><img src="logo-smile-arrow-lockup.svg" alt="Smile Arrow lockup"></div>
+      <div class="card-dark"><img src="logo-smile-arrow-lockup-dark.svg" alt="Smile Arrow lockup dark"></div>
+      <div class="card-label"><strong>Icon + Codost</strong><span class="pill">Lockup</span></div>
+    </div>
+  </div>
+
+  <div class="nav-mockups">
+    <div class="nav-mock light"><img src="logo-smile-arrow.svg" alt=""><span class="brand-name">Codost</span></div>
+    <div class="nav-mock dark"><img src="logo-smile-arrow-dark.svg" alt=""><span class="brand-name">Codost</span></div>
+  </div>
+
+  <div class="meaning">
+    <div class="meaning-title">Why it works</div>
+    <p>Two emotions in one mark: <em>happiness (the smile)</em> and <em>progress (the arrow)</em>. It's the kind of logo that makes people subconsciously smile back. Dead simple — a child could draw it from memory.</p>
+  </div>
+</section>
+
+<!-- Concept D: Together Circle -->
+<section class="concept-section" id="concept-d">
+  <div class="concept-header">
+    <div class="concept-number">D</div>
+    <h2>Together</h2>
+    <span class="tag">Completeness</span>
+  </div>
+  <div class="concept-tagline">"Two halves make a whole. We complete your business."</div>
+  <p class="concept-desc">Two half-circles in different teal shades click together to form one complete circle with a tiny heart at the center. One half is you, the other is Codost. Together, you're complete.</p>
+
+  <div class="logo-grid">
+    <div class="logo-card" data-concept="D" data-variant="icon">
+      <div class="card-light"><img src="logo-together-circle.svg" alt="Together Circle icon"></div>
+      <div class="card-dark"><img src="logo-together-circle-dark.svg" alt="Together Circle dark"></div>
+      <div class="card-label"><strong>Icon Mark</strong><span class="pill">32×32</span></div>
+    </div>
+    <div class="logo-card" data-concept="D" data-variant="lockup">
+      <div class="card-light"><img src="logo-together-circle-lockup.svg" alt="Together Circle lockup"></div>
+      <div class="card-dark"><img src="logo-together-circle-lockup-dark.svg" alt="Together Circle lockup dark"></div>
+      <div class="card-label"><strong>Icon + Codost</strong><span class="pill">Lockup</span></div>
+    </div>
+  </div>
+
+  <div class="nav-mockups">
+    <div class="nav-mock light"><img src="logo-together-circle.svg" alt=""><span class="brand-name">Codost</span></div>
+    <div class="nav-mock dark"><img src="logo-together-circle-dark.svg" alt=""><span class="brand-name">Codost</span></div>
+  </div>
+
+  <div class="meaning">
+    <div class="meaning-title">Why it works</div>
+    <p>The <em>heart hidden inside the joined circle</em> is a "discovery moment" — people notice it and feel warmth. The two-tone halves clearly communicate "Dost" (friend) — <em>two becoming one</em>. It ties directly to the brand name's meaning.</p>
+  </div>
+</section>
+
+<!-- Concept E: Rising Spark -->
+<section class="concept-section" id="concept-e">
+  <div class="concept-header">
+    <div class="concept-number">E</div>
+    <h2>The Rising Spark</h2>
+    <span class="tag">Growth + Energy</span>
+  </div>
+  <div class="concept-tagline">"We ignite your business."</div>
+  <p class="concept-desc">A rising flame or seedling shape with three layered teal tones — outer (brand), middle (lighter), and a bright white core. It's growth, it's energy, it's the spark that starts everything. Think of a diya during Diwali.</p>
+
+  <div class="logo-grid">
+    <div class="logo-card" data-concept="E" data-variant="icon">
+      <div class="card-light"><img src="logo-rising-spark.svg" alt="Rising Spark icon"></div>
+      <div class="card-dark"><img src="logo-rising-spark-dark.svg" alt="Rising Spark dark"></div>
+      <div class="card-label"><strong>Icon Mark</strong><span class="pill">32×32</span></div>
+    </div>
+    <div class="logo-card" data-concept="E" data-variant="lockup">
+      <div class="card-light"><img src="logo-rising-spark-lockup.svg" alt="Rising Spark lockup"></div>
+      <div class="card-dark"><img src="logo-rising-spark-lockup-dark.svg" alt="Rising Spark lockup dark"></div>
+      <div class="card-label"><strong>Icon + Codost</strong><span class="pill">Lockup</span></div>
+    </div>
+  </div>
+
+  <div class="nav-mockups">
+    <div class="nav-mock light"><img src="logo-rising-spark.svg" alt=""><span class="brand-name">Codost</span></div>
+    <div class="nav-mock dark"><img src="logo-rising-spark-dark.svg" alt=""><span class="brand-name">Codost</span></div>
+  </div>
+
+  <div class="meaning">
+    <div class="meaning-title">Why it works</div>
+    <p>It's <em>culturally resonant</em> — a diya/flame shape carries deep meaning in Indian culture (light, auspiciousness, new beginnings). The three layers create beautiful depth. Everyone associates upward motion with growth and success.</p>
+  </div>
+</section>
+
+<footer>
+  Codost Logo Exploration · Round 2 · Designed for everyone, not just developers<br>
+  Brand Teal #0891b2 · Satoshi + Inter · Click cards to compare
+</footer>
+
+<!-- Selection bar -->
+<div class="selection-bar hidden" id="selectionBar">
+  <span class="pick-label">🔍 Comparing:</span>
+  <div class="pick-items" id="pickItems"></div>
+</div>
+
+<script>
+  const bar = document.getElementById('selectionBar');
+  const pickItems = document.getElementById('pickItems');
+  const selected = new Set();
+
+  document.querySelectorAll('.logo-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const key = card.dataset.concept + '-' + card.dataset.variant;
+      if (selected.has(key)) {
+        selected.delete(key);
+        card.classList.remove('selected');
+      } else {
+        if (selected.size >= 5) return;
+        selected.add(key);
+        card.classList.add('selected');
+      }
+      updateBar();
+    });
+  });
+
+  function updateBar() {
+    if (selected.size === 0) {
+      bar.classList.add('hidden');
+      return;
+    }
+    bar.classList.remove('hidden');
+    pickItems.innerHTML = '';
+    document.querySelectorAll('.logo-card.selected').forEach(card => {
+      const img = card.querySelector('.card-light img');
+      const label = card.querySelector('.card-label strong');
+      const concept = card.closest('.concept-section').querySelector('h2');
+      const item = document.createElement('div');
+      item.className = 'pick-item';
+      item.innerHTML = `<img src="${img.src}" alt=""><span>${concept.textContent}</span>`;
+      pickItems.appendChild(item);
+    });
+  }
+</script>
+</body>
+</html>

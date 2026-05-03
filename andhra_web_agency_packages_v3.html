@@ -1,0 +1,228 @@
+
+<h2 class="sr-only">Updated web development agency pricing packages with redistributed freebies across Showcase Pro, Sell Online and Brand and Grow</h2>
+
+<style>
+  .pkg-wrap { font-family: var(--font-sans); padding: 1.5rem 0; }
+  .pkg-header { text-align: center; margin-bottom: 2rem; }
+  .pkg-header h1 { font-size: 20px; font-weight: 500; margin: 0 0 6px; color: var(--color-text-primary); }
+  .pkg-header p { font-size: 13px; color: var(--color-text-secondary); margin: 0; }
+  .pkg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 1.5rem; }
+  .pkg-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1.25rem 1rem; position: relative; display: flex; flex-direction: column; }
+  .pkg-card.featured { border: 2px solid var(--color-border-info); }
+  .badge { display: inline-block; font-size: 11px; padding: 3px 10px; border-radius: var(--border-radius-md); margin-bottom: 10px; font-weight: 500; }
+  .badge-info { background: var(--color-background-info); color: var(--color-text-info); }
+  .badge-success { background: var(--color-background-success); color: var(--color-text-success); }
+  .badge-warning { background: var(--color-background-warning); color: var(--color-text-warning); }
+  .badge-danger { background: var(--color-background-danger); color: var(--color-text-danger); }
+  .pkg-name { font-size: 16px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 4px; }
+  .pkg-telugu { font-size: 12px; color: var(--color-text-secondary); margin: 0 0 12px; }
+  .pkg-price { font-size: 22px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 2px; }
+  .pkg-price-note { font-size: 11px; color: var(--color-text-secondary); margin: 0 0 14px; }
+  .pkg-divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 0 0 12px; }
+  .pkg-features { list-style: none; padding: 0; margin: 0 0 1rem; flex: 1; }
+  .pkg-features li { font-size: 12px; color: var(--color-text-secondary); padding: 4px 0; display: flex; gap: 6px; align-items: flex-start; line-height: 1.4; }
+  .pkg-features li::before { content: "✓"; color: var(--color-text-success); font-weight: 500; flex-shrink: 0; }
+  .pkg-features li.cross::before { content: "✕"; color: var(--color-text-danger); }
+  .pkg-cta { display: block; text-align: center; padding: 8px; font-size: 13px; font-weight: 500; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); cursor: pointer; background: transparent; color: var(--color-text-primary); width: 100%; }
+  .pkg-cta:hover { background: var(--color-background-secondary); }
+  .freebies-box { border-radius: var(--border-radius-md); padding: 10px 12px; margin-bottom: 14px; }
+  .freebies-box.green { background: var(--color-background-success); border: 0.5px solid var(--color-border-success); }
+  .freebies-box.amber { background: var(--color-background-warning); border: 0.5px solid var(--color-border-warning); }
+  .freebies-box.red { background: var(--color-background-danger); border: 0.5px solid var(--color-border-danger); }
+  .freebies-box p { margin: 0 0 6px; font-size: 12px; font-weight: 500; }
+  .freebies-box.green p { color: var(--color-text-success); }
+  .freebies-box.amber p { color: var(--color-text-warning); }
+  .freebies-box.red p { color: var(--color-text-danger); }
+  .freebies-box ul { list-style: none; padding: 0; margin: 0; }
+  .freebies-box ul li { font-size: 11px; padding: 2px 0; display: flex; gap: 5px; align-items: flex-start; line-height: 1.4; }
+  .freebies-box.green ul li { color: var(--color-text-success); }
+  .freebies-box.amber ul li { color: var(--color-text-warning); }
+  .freebies-box.red ul li { color: var(--color-text-danger); }
+  .freebies-box ul li::before { content: "🎁"; font-size: 11px; flex-shrink: 0; }
+  .freebies-value { font-size: 11px; font-weight: 500; margin-top: 6px; padding-top: 5px; }
+  .freebies-box.green .freebies-value { color: var(--color-text-success); border-top: 0.5px solid var(--color-border-success); }
+  .freebies-box.amber .freebies-value { color: var(--color-text-warning); border-top: 0.5px solid var(--color-border-warning); }
+  .freebies-box.red .freebies-value { color: var(--color-text-danger); border-top: 0.5px solid var(--color-border-danger); }
+  .addon-section { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 1.25rem; margin-bottom: 1.5rem; }
+  .addon-section h3 { font-size: 14px; font-weight: 500; margin: 0 0 12px; color: var(--color-text-primary); }
+  .addon-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; }
+  .addon-item { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 10px 12px; }
+  .addon-item p { margin: 0; }
+  .addon-name { font-size: 12px; font-weight: 500; color: var(--color-text-primary); }
+  .addon-price { font-size: 13px; color: var(--color-text-info); font-weight: 500; margin-top: 2px; }
+  .addon-desc { font-size: 11px; color: var(--color-text-secondary); margin-top: 2px; }
+  .notes { font-size: 12px; color: var(--color-text-secondary); border-top: 0.5px solid var(--color-border-tertiary); padding-top: 1rem; line-height: 1.8; }
+  .notes strong { font-weight: 500; color: var(--color-text-primary); }
+</style>
+
+<div class="pkg-wrap">
+  <div class="pkg-header">
+    <h1>Website Packages — Andhra Pradesh Creative Businesses</h1>
+    <p>Designed for interior designers, handicraft sellers, craft artists & handloom / textile businesses</p>
+  </div>
+
+  <div class="pkg-grid">
+
+    <div class="pkg-card">
+      <span class="badge badge-success">Starter</span>
+      <p class="pkg-name">Digital Presence</p>
+      <p class="pkg-telugu">Basic Online Identity</p>
+      <p class="pkg-price">₹8,000 – ₹12,000</p>
+      <p class="pkg-price-note">One-time · Delivery: 7–10 days</p>
+      <hr class="pkg-divider">
+      <ul class="pkg-features">
+        <li>5-page website (Home, About, Gallery, Services, Contact)</li>
+        <li>Mobile-friendly design</li>
+        <li>WhatsApp click-to-chat button</li>
+        <li>Google Maps embed</li>
+        <li>Basic photo gallery (up to 20 photos)</li>
+        <li>Contact form</li>
+        <li>1 round of revisions</li>
+        <li class="cross">No online store</li>
+        <li class="cross">No SEO setup</li>
+        <li class="cross">No social media integration</li>
+      </ul>
+      <button class="pkg-cta" onclick="sendPrompt('Tell me more about the Digital Presence starter package ↗')">Learn more ↗</button>
+    </div>
+
+    <div class="pkg-card featured">
+      <span class="badge badge-info">⭐ Most Popular</span>
+      <p class="pkg-name">Showcase Pro</p>
+      <p class="pkg-telugu">Portfolio + Enquiry Ready</p>
+      <p class="pkg-price">₹18,000 – ₹28,000</p>
+      <p class="pkg-price-note">One-time · Delivery: 14–18 days</p>
+      <hr class="pkg-divider">
+
+      <div class="freebies-box green">
+        <p>Free bonuses included</p>
+        <ul>
+          <li>Google Business profile setup & optimisation</li>
+          <li>Domain name for 1 year (worth ₹800–₹1,200)</li>
+          <li>Telugu content translation (worth ₹2,500)</li>
+        </ul>
+        <p class="freebies-value">Total free value: ₹5,000+</p>
+      </div>
+
+      <ul class="pkg-features">
+        <li>8–10 page professional website</li>
+        <li>Custom designed portfolio/gallery</li>
+        <li>Product/work catalogue (up to 50 items)</li>
+        <li>WhatsApp + Instagram integration</li>
+        <li>Basic SEO setup (meta tags, Google indexing)</li>
+        <li>2 rounds of revisions</li>
+        <li>Basic enquiry/quote request form</li>
+        <li>Social media feed embed</li>
+        <li class="cross">No payment gateway</li>
+      </ul>
+      <button class="pkg-cta" onclick="sendPrompt('How do I pitch Showcase Pro freebies to a handicraft seller in Andhra Pradesh? ↗')">How to sell this ↗</button>
+    </div>
+
+    <div class="pkg-card">
+      <span class="badge badge-warning">Business</span>
+      <p class="pkg-name">Sell Online</p>
+      <p class="pkg-telugu">Full E-Commerce Store</p>
+      <p class="pkg-price">₹35,000 – ₹55,000</p>
+      <p class="pkg-price-note">One-time · Delivery: 25–35 days</p>
+      <hr class="pkg-divider">
+
+      <div class="freebies-box amber">
+        <p>Free bonuses included</p>
+        <ul>
+          <li>Logo design (worth ₹3,000–₹6,000)</li>
+          <li>1 month free WhatsApp support</li>
+          <li>3 custom social media post templates (Canva)</li>
+        </ul>
+        <p class="freebies-value">Total free value: ₹7,000+</p>
+      </div>
+
+      <ul class="pkg-features">
+        <li>Full e-commerce website</li>
+        <li>Up to 100 product listings</li>
+        <li>Razorpay / UPI / COD payment gateway</li>
+        <li>Order management dashboard</li>
+        <li>WhatsApp order notifications</li>
+        <li>GST invoice generation</li>
+        <li>Advanced SEO setup</li>
+        <li>3 rounds of revisions</li>
+        <li>Staff training (2 hrs)</li>
+      </ul>
+      <button class="pkg-cta" onclick="sendPrompt('Tell me more about the Sell Online e-commerce package ↗')">Learn more ↗</button>
+    </div>
+
+    <div class="pkg-card">
+      <span class="badge badge-danger">Premium</span>
+      <p class="pkg-name">Brand & Grow</p>
+      <p class="pkg-telugu">Full Brand + Digital Presence</p>
+      <p class="pkg-price">₹70,000 – ₹1,10,000</p>
+      <p class="pkg-price-note">One-time · Delivery: 45–60 days</p>
+      <hr class="pkg-divider">
+
+      <div class="freebies-box red">
+        <p>Free bonuses included</p>
+        <ul>
+          <li>Logo + full brand identity kit</li>
+          <li>3 months free WhatsApp priority support</li>
+          <li>10 custom social media post templates (Canva)</li>
+        </ul>
+        <p class="freebies-value">Total free value: ₹15,000+</p>
+      </div>
+
+      <ul class="pkg-features">
+        <li>Everything in Sell Online</li>
+        <li>Unlimited product listings</li>
+        <li>Blog / content section</li>
+        <li>Email marketing setup</li>
+        <li>Google Ads / Meta Ads setup</li>
+        <li>Professional product photography guide</li>
+        <li>Unlimited revisions (within scope)</li>
+        <li>Quarterly performance report</li>
+      </ul>
+      <button class="pkg-cta" onclick="sendPrompt('Tell me more about the Brand & Grow premium package ↗')">Learn more ↗</button>
+    </div>
+
+  </div>
+
+  <div class="addon-section">
+    <h3>Monthly Support & Maintenance Add-ons (Optional)</h3>
+    <div class="addon-grid">
+      <div class="addon-item">
+        <p class="addon-name">Basic Care</p>
+        <p class="addon-price">₹800 / month</p>
+        <p class="addon-desc">Security updates, uptime monitoring, 1 content change/month</p>
+      </div>
+      <div class="addon-item">
+        <p class="addon-name">Active Support</p>
+        <p class="addon-price">₹2,000 / month</p>
+        <p class="addon-desc">5 content updates, WhatsApp support, monthly backup</p>
+      </div>
+      <div class="addon-item">
+        <p class="addon-name">Growth Partner</p>
+        <p class="addon-price">₹4,500 / month</p>
+        <p class="addon-desc">Unlimited updates, SEO reporting, social media posts (4/month)</p>
+      </div>
+      <div class="addon-item">
+        <p class="addon-name">Extra Products</p>
+        <p class="addon-price">₹15 – ₹25 / item</p>
+        <p class="addon-desc">Beyond included limit, with photo + description</p>
+      </div>
+      <div class="addon-item">
+        <p class="addon-name">Logo Design</p>
+        <p class="addon-price">₹3,000 – ₹6,000</p>
+        <p class="addon-desc">One-time add-on (FREE in Sell Online & Brand & Grow)</p>
+      </div>
+      <div class="addon-item">
+        <p class="addon-name">Telugu Content</p>
+        <p class="addon-price">₹2,500 one-time</p>
+        <p class="addon-desc">Bilingual website (FREE in Showcase Pro & above)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="notes">
+    <strong>Payment Terms:</strong> 50% advance · 50% on delivery &nbsp;|&nbsp;
+    <strong>Hosting:</strong> ₹2,500–₹4,000/year (billed separately) &nbsp;|&nbsp;
+    <strong>Domain:</strong> ₹800–₹1,200/year (FREE 1st year in Showcase Pro) &nbsp;|&nbsp;
+    <strong>Revisions:</strong> Additional rounds at ₹500–₹1,500 per round &nbsp;|&nbsp;
+    <strong>Client provides:</strong> Product photos, business description
+  </div>
+</div>
