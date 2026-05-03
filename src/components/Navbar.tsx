@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
@@ -34,8 +34,8 @@ export default function Navbar() {
           className="pointer-events-auto"
         >
           <Magnetic strength={0.2}>
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className="flex items-center font-heading text-2xl font-bold tracking-tighter text-[#111827] transition-transform hover:scale-105"
             >
               <div className="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-[#0891b2] text-white">
@@ -47,7 +47,7 @@ export default function Navbar() {
         </motion.div>
 
         {/* Floating Nav Pill - Center (Desktop) */}
-        <motion.div 
+        <motion.div
           initial={{ y: -20, opacity: 0, filter: 'blur(10px)' }}
           animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
           transition={{ delay: 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
@@ -68,7 +68,7 @@ export default function Navbar() {
         </motion.div>
 
         {/* CTA Button - Right */}
-        <motion.div 
+        <motion.div
           initial={{ x: 20, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
