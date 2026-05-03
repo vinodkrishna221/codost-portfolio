@@ -1,7 +1,7 @@
 "use client";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import Magnetic from "@/components/Magnetic";
 
 const projects = [

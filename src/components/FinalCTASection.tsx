@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Check, Sparkles, Circle } from 'lucide-react';
+import { Check, Sparkles, Circle } from 'lucide-react';
 import { useRef } from 'react';
 import Magnetic from '@/components/Magnetic';
 

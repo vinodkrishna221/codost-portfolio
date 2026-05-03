@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, Linkedin, ArrowUpRight, ShieldCheck, Cpu } from 'lucide-react';
+import { Github, Linkedin, ShieldCheck, Cpu } from 'lucide-react';
 import Magnetic from '@/components/Magnetic';
 
 const team = [

@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Globe, ShoppingCart, Smartphone, TrendingUp, ArrowUpRight } from "lucide-react";
-import React from "react";
 
 const services = [
   {
